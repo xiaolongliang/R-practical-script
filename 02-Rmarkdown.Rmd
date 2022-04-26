@@ -1,0 +1,65 @@
+---
+title: "rmarkdowm_1"
+author: "xlliang"
+date: "2020/11/2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 数据输入x
+```{r}
+set.seed(1)
+x <- round(rnorm(10),2)
+print(x)
+```
+
+
+#图形输出
+```{r, echo=FALSE}
+plot(x)
+```
+
+
+# 富文本表格输出
+```{r}
+knitr::kable(as.data.frame(x))
+```
+
+
+#保存
+```{r}
+rmarkdown::render("02-Rmarkdown.Rmd",output_format = "html_document",encoding = "UTF-8")
+rmarkdown::render("02-Rmarkdown.Rmd",output_format = "word_document",encoding = "UTF-8")
+```
+
+
+# 新增一个代码段  ctrl+alt+i
+## knitr包提供了一个 kable() 函数可以用来把数据框或矩阵转化成有格式的表格， 支持HTML、docx、LaTeX等格式
+
+```{r}
+x <- 1:10; y <- x^2; lmr <- lm(y~x)
+co <- summary(lmr)$coefficient
+print(co)
+knitr::kable(co) #kable()函数的digits=选项可以控制小数点后数字位数，caption=选项可以指定表的标题内容。
+```
+## xtable
+
+```{r}
+print(xtable::xtable(lmr),type = "html")
+```
+## pander
+```{r}
+pabder:pander(lmr)
+```
+
+```{r}
+
+```
+
+
+
+
+

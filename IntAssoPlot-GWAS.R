@@ -1,0 +1,6 @@
+install.packages(c("devtools","ggplot2","ggrepel","reshape2","BiocManager"))
+library(BiocManager)
+library(devtools)
+BiocManager::install(c("SNPRelate","gdsfmt"))
+devtools::install_github("whweve/IntAssoPlot",build =TRUE,build_opts = c("–no-resave-data", "–no-manual"))
+library(IntAssoPlot)
