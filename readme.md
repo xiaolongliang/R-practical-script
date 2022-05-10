@@ -6,5 +6,5 @@
 - R function
 - data deal process  
 
-***this work will keep going continue!***
+***This work will keep going continue!***
 
